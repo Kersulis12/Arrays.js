@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./javascript/arrays.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //task 1 (stringai)
+        //Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus (Jonas Jonaitis). Atspausdinti trumpesnį stringą.
+
+        let a1 = "Sandra"; 
+        let a2 = "Bulok";
+        if (a1.length > a2.length) {
+            console.log(a1);
+        } else {
+            console.log(a2);
+        }
+
+        //task 2 (stringai)
+        //Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus. Vardą atspausdinti tik didžiosiom raidėm, o pavardę tik mažosioms. (LEONARDO dicaprio)
+
+        console.log(a1.toUpperCase(), a2.toLowerCase());
+
+        //task 3 (stringai)
+        //Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus. Sukurti trečią kintamąjį ir jam priskirti stringą, sudarytą iš pirmų vardo ir pavardės kintamųjų raidžių. Jį atspausdinti.
+
+        // let a3 = "a1.charAt(0) + a2.charAt(0)";
+        // console.log(a3);
+        let fullname = a1[0] + a2[0];
+        console.log(fullname);
+
+        //task4 (stringai)
+        //Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus. Sukurti trečią kintamąjį ir jam priskirti stringą, sudarytą iš trijų paskutinių vardo ir pavardės kintamųjų raidžių. Jį atspausdinti.
+        let a4 = a1.substring(a1.length-3) + a2.substring(a2.length-3);
+        console.log(a4);
+
+        //task5 (stringai)
+        //Sukurti kintamąjį su stringu: “An American in Paris”. Jame visas “a” (didžiąsias ir mažąsias) pakeisti žvaigždutėm “*”.  Rezultatą atspausdinti.
+
+        let text = "An American in Paris";
+        console.log(text.replace(/[Aa]/g ,  "*")); //kaip pakeisti visas?
+        text = text.replaceAll("a" , "*");
+        console.log(text.replaceAll("A" , "*"));
+       
+        //task6 (stringai)
+        //Sukurti kintamąjį su stringu: “An American in Paris”. Jame ištrinti visas balses. Rezultatą atspausdinti. Kodą pakartoti su stringais: “Breakfast at Tiffany's”, “2001: A Space Odyssey” ir “It's a Wonderful Life”.
+        text = "An American in Paris";
+        let vowels = "A, A, e, i, a, i, a, i"; //????????
+        console.log(text.replace(/[aeiuo]/gi ,  "")); //kaip pakeisti visas?
+
+        // console.log(text - vowels);
+
+        //task7 (stringai)
+        //Stringe, kurį generuoja toks kodas: "Star Wars: Episode "+ " ".repeat( Math.ceil(Math.random() * 10))+(Math.ceil (Math.random() * 7)+1) + " - A New Hope" Surasti ir atspausdinti epizodo numerį.
+        let string = "Star Wars: Episode "+ " ".repeat( Math.ceil(Math.random() * 10))+(Math.ceil (Math.random() * 7)+1) + " - A New Hope";
+        console.log(string);//???????
+        console.log(string[ string.length -14 ]);
+
+        //task1 (ciklai)
+        //Sugeneruokite 300 atsitiktinių skaičių nuo 0 iki 300, atspausdinkite juos atskirtus tarpais ir suskaičiuokite kiek tarp jų yra didesnių už 150.  Skaičiai didesni nei 275 turi būti atspausdinti skliausteliuose” [ ] “.
+        let number = 0;
+        text = "";
+        for (let i = 0; i < 300; i++) {
+            let num = Math.round( Math.random() * 300 );
+            // console.log(num);
+            // ar num yra daugiau už 150? jei taip - atspausdink KA NORS
+            if (num > 150) {
+                // console.log("daugiau už 150");
+                number++//ar tai reiškia suskaičiuoti, kiek didesnių už 150?
+                // console.log(number);
+                
+            }
+            if (num > 275) {
+                
+                text += "[" + num + "] ";
+                
+            }
+            if (num < 275) {
+                text += "" + num + " ";
+                
+            }
+
+        }
+        console.log(number, text);
+       
+
+        
+        //task2 (ciklai)
+        //Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, kurie dalijasi iš 77 be liekanos. Skaičius atskirkite kableliais. Po paskutinio skaičiaus kablelio neturi būti.
+        // let num = Math.floor( (Math.random() * 3000 ) + 1);
+        // console.log(num);
+        // let num77 = num. slice (num / 77);
+        // console.log(num77);
+
+        // let number = 0;
+        text = "";
+        for (let i = 77; i < 3000; i+= 77) {
+            // let num = Math.floor( (Math.random() * 3000 ) + 1)% 77;
+            if (i < 3000 - 77){
+                text+= (i+",");//console.log()
+            } else {
+                text+= (i+"");
+            }
+                
+        }
+        
+        console.log(text);
+        
+        //task3 (ciklai)
+        //Nupieškite kvadratą iš “*”, kurio kraštines sudaro 100 “*”.
+      
+        
+        
+        
+    
+
+
+    </script>
+</body>
+
+</html>
