@@ -14,7 +14,7 @@
         //task 1 (stringai)
         //Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus (Jonas Jonaitis). Atspausdinti trumpesnį stringą.
 
-        let a1 = "Sandra"; 
+        let a1 = "Sandra";
         let a2 = "Bulok";
         if (a1.length > a2.length) {
             console.log(a1);
@@ -37,60 +37,60 @@
 
         //task4 (stringai)
         //Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus. Sukurti trečią kintamąjį ir jam priskirti stringą, sudarytą iš trijų paskutinių vardo ir pavardės kintamųjų raidžių. Jį atspausdinti.
-        let a4 = a1.substring(a1.length-3) + a2.substring(a2.length-3);
+        let a4 = a1.substring(a1.length - 3) + a2.substring(a2.length - 3);
         console.log(a4);
 
         //task5 (stringai)
         //Sukurti kintamąjį su stringu: “An American in Paris”. Jame visas “a” (didžiąsias ir mažąsias) pakeisti žvaigždutėm “*”.  Rezultatą atspausdinti.
 
         let text = "An American in Paris";
-        console.log(text.replace(/[Aa]/g ,  "*")); //kaip pakeisti visas?
-        text = text.replaceAll("a" , "*");
-        console.log(text.replaceAll("A" , "*"));
-       
+        console.log(text.replace(/[Aa]/g, "*")); //kaip pakeisti visas?
+        text = text.replaceAll("a", "*");
+        console.log(text.replaceAll("A", "*"));
+
         //task6 (stringai)
         //Sukurti kintamąjį su stringu: “An American in Paris”. Jame ištrinti visas balses. Rezultatą atspausdinti. Kodą pakartoti su stringais: “Breakfast at Tiffany's”, “2001: A Space Odyssey” ir “It's a Wonderful Life”.
         text = "An American in Paris";
         let vowels = "A, A, e, i, a, i, a, i"; //????????
-        console.log(text.replace(/[aeiuo]/gi ,  "")); //kaip pakeisti visas?
+        console.log(text.replace(/[aeiuo]/gi, "")); //kaip pakeisti visas?
 
         // console.log(text - vowels);
 
         //task7 (stringai)
         //Stringe, kurį generuoja toks kodas: "Star Wars: Episode "+ " ".repeat( Math.ceil(Math.random() * 10))+(Math.ceil (Math.random() * 7)+1) + " - A New Hope" Surasti ir atspausdinti epizodo numerį.
-        let string = "Star Wars: Episode "+ " ".repeat( Math.ceil(Math.random() * 10))+(Math.ceil (Math.random() * 7)+1) + " - A New Hope";
+        let string = "Star Wars: Episode " + " ".repeat(Math.ceil(Math.random() * 10)) + (Math.ceil(Math.random() * 7) + 1) + " - A New Hope";
         console.log(string);//???????
-        console.log(string[ string.length -14 ]);
+        console.log(string[string.length - 14]);
 
         //task1 (ciklai)
         //Sugeneruokite 300 atsitiktinių skaičių nuo 0 iki 300, atspausdinkite juos atskirtus tarpais ir suskaičiuokite kiek tarp jų yra didesnių už 150.  Skaičiai didesni nei 275 turi būti atspausdinti skliausteliuose” [ ] “.
         let number = 0;
         text = "";
         for (let i = 0; i < 300; i++) {
-            let num = Math.round( Math.random() * 300 );
+            let num = Math.round(Math.random() * 300);
             // console.log(num);
             // ar num yra daugiau už 150? jei taip - atspausdink KA NORS
             if (num > 150) {
                 // console.log("daugiau už 150");
                 number++//ar tai reiškia suskaičiuoti, kiek didesnių už 150?
                 // console.log(number);
-                
+
             }
             if (num > 275) {
-                
+
                 text += "[" + num + "] ";
-                
+
             }
             if (num < 275) {
                 text += "" + num + " ";
-                
+
             }
 
         }
         console.log(number, text);
-       
 
-        
+
+
         //task2 (ciklai)
         //Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, kurie dalijasi iš 77 be liekanos. Skaičius atskirkite kableliais. Po paskutinio skaičiaus kablelio neturi būti.
         // let num = Math.floor( (Math.random() * 3000 ) + 1);
@@ -100,25 +100,82 @@
 
         // let number = 0;
         text = "";
-        for (let i = 77; i < 3000; i+= 77) {
+        for (let i = 77; i < 3000; i += 77) {
             // let num = Math.floor( (Math.random() * 3000 ) + 1)% 77;
-            if (i < 3000 - 77){
-                text+= (i+",");//console.log()
+            if (i < 3000 - 77) {
+                text += (i + ",");//console.log()
             } else {
-                text+= (i+"");
+                text += (i + "");
             }
-                
+
         }
-        
+
         console.log(text);
-        
+
         //task3 (ciklai)
         //Nupieškite kvadratą iš “*”, kurio kraštines sudaro 100 “*”.
-      
-        
-        
-        
-    
+        for (let a = 0; a < 100; a++) {
+            text = "";
+            for (let i = 0; i < 100; i++) {
+                text += ("*");
+            }
+            console.log(text);
+
+        }
+
+        //task5 (ciklai)
+        //Metam monetą. Monetos kritimo rezultatą imituojam Math.random() funkcija, kur 0 yra herbas, o 1 - skaičius. Monetos metimo rezultatus išvedame į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” jeigu herbas. Suprogramuokite tris skirtingus scenarijus kai monetos metimą stabdome: Iškritus herbui; Tris kartus iškritus herbui; Tris kartus iš eilės iškritus herbui;
+
+
+        // let hCount = 0;//tai yra išorinis kintamasis
+        // while (true) {//for tada, jeigu žinoma, kiek kartus, while - jeigu nežinoma 
+        //     let num = Math.round(Math.random() * 1);
+        //     if (num == 0) {
+        //         text = ("H");
+        //         console.log(text);
+        //     } else {
+        //         text = ("S");
+        //         console.log(text);
+
+        //     }
+
+        //     if (num == 0) {
+        //         hCount++;
+        //     }
+
+        //     if (hCount == 3) {
+        //         break;
+        //     }
+        // }
+
+        //task6 (ciklai)
+        //Kazys ir Petras žaidžiai šaškėm. Petras surenka taškų kiekį nuo 10 iki 20, Kazys surenka taškų kiekį nuo 5 iki 25. Vienoje eilutėje išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”. Taškų kiekį generuokite funkcija ​Math.random()​. Žaidimą laimi tas, kas greičiau surenka 222 taškus. Partijas kartoti tol, kol kažkuris žaidėjas pirmas surenka 222 arba daugiau taškų.
+
+        let pl1 = "Petras";
+        let pl2 = "Kazys";
+        // let cit = "“Partiją laimėjo: ​​”.";
+
+        let pt = 0;
+        let kt = 0;
+        while (true) {
+            let t1 = Math.round(Math.random() * 10)+10; // random nuo 10 iki 20
+            let t2 = Math.round(Math.random() * 5) + 20; //random 5 iki 25
+            pt += t1;
+            kt += t2;
+
+            if (pt > 221 || kt > 221) {
+                break;
+            }
+        }
+
+        console.log(pl1, pt=+, pl2, kt=+);
+
+
+
+
+
+
+
 
 
     </script>
